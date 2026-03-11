@@ -3,7 +3,7 @@
 
 Scope -> global, block, functional => aapka daira kaha tak hai
 
-var 
+var
 -> window main add hota hai
 -> funciton scope hota hai
 -> firse declare kar sakte ho same name se error nahi aayega
@@ -12,9 +12,9 @@ var
 let
 ->firse declare nahi kar sakte ho same name se error aayega
 -> window main add nahi hota
--> block scope 
+-> block scope
 
-const 
+const
 -> once declared, cannot change the value
 
 Reassignment and Redeclaration
@@ -28,9 +28,9 @@ Temporal Dead Zone (TDZ) => utna area jitne main js ko pta hai ki variable exisi
 Hoisting impact per type
     -> Hoisting => ek variable ko jab js mein banate hai to vo variable do hisso main toot jata hai and uska declare part upar chala jaata hai and uska initializatiopn part neeche rhe jaata hai
 ```
-for example if 
+for example if
 var a = 12
-then => 
+then =>
     var a = undefined;
     a = 12;
 ```
@@ -39,7 +39,7 @@ var -> hoist -> undefined
 let -> hoist -> reference error
 const -> hoist -> reference error
 
-Note -> check Object.freeze 
+Note -> check Object.freeze
 if there is an object stored in const, the the property of the object can be updated, to prevent that we can use object.freeze
 
 **********Data types + Type system**********
@@ -67,7 +67,7 @@ for example -> let a = 999999999999999999999999n; | if you want to add anything 
 
 Dynamic Typing -> JS main static typing nahi hai and yaha par hai dynamic typing jiska matlab hai aap data ko change kar skte ho kyuki yaha par dynamic data types hai
 ```
-for example 
+for example
 let a = 12;
 a = true;
 ```
@@ -77,7 +77,7 @@ Type of quirks => | eg -> typeof null === 'object'
 NaN -> not a number
 
 Type Coercion (== vs ===)
-type coercion -> concept jisme appka ek type automatically convert hojayega 
+type coercion -> concept jisme appka ek type automatically convert hojayega
 
 Truthy and Falsy values => har value ko truth ya false main todkar rakha hai
 falsy values => 0, false, "", null, undefined, NaN, document.all
@@ -97,7 +97,7 @@ instanceof => check if it is a part of something | example => a instanceof Array
 Kuch bhi repeat karne ko loop kahete hai
 
 break; => comes out of the loop
-continue; => skip and keep going 
+continue; => skip and keep going
 
 
 **********Functions**********
@@ -125,9 +125,64 @@ let fnc = function(){ // one thing to note that we dont write func name in fron 
 //code;
 }
 
-Arrow functions 
+Arrow functions
 let fnc = ()=>{
     }
+
+-> default parameters
+
+function add(v1 = 0,v2 = 0){  // it will take the default values if no values are passed during the function call
+console.log(v1+v2);
+}
+
+add();
+
+-> rest / spread parameters
+jab arguments kai saare ho tab humme utne hi parameter banane padenge, isse bachne ke liye hum rest/spread ka use karte hai | ... | agar ... function ke parameter space main lage to vo rest operator hai. and agar vo arrays and objects main lage to vo spread operator hai
+
+function abcd(...val){
+    console.log(val);
+}
+
+abcd(1,2,3,4,5,6,7,8,9,10);
+
+function abcd(a,b,c...val){
+    console.log(a,b,c,val);
+}
+
+abcd(1,2,3,4,5,6,7,8,9,10);
+
+
+-> return => matlab jaha se aaye ho wahi daal denge | return hamesha function ke andar se hi hoga
+ 
+
+-> fist class functions => meaning ke aap functions ko value ke taraha treat kar skte ho | meaning you can store it in variable, pass it as a value to another function
+
+// first class functions
+
+function abcd (val){    // this val now can be called as a funciton inside abcd
+    val();
+}
+
+abcd(function (){       // cannot write the function name
+    console.log("HEHEHEHEHEHEHEHEHHE");
+});
+
+
+
+Higher order functions => vo function hota hai jo return kare function ya fir accept kare ek function apne parameter main
+
+//higher order functions
+
+function abcd(val){
+    return function(){
+        console.log("HEHEHEHEHEHEHEHEHEHE");
+    }
+}
+
+abcd()();       //first bracket to run the abcd, second one to run the function which is returned form abcd
+
+
 
 
 
@@ -154,7 +209,7 @@ let fnc = ()=>{
 
 
 // **********Functions**********
-/* 
+/*
 let fnc = function () {
     console.log("Hello World");
 }
@@ -164,12 +219,66 @@ fnc();
 
 
 
-function dance(v1){         //parameters
-    console.log(`${v1} naach rha hai`);
+// function dance(v1){         //parameters
+//     console.log(`${v1} naach rha hai`);
+// }
+
+// dance("Gadha");             //arguments
+// dance("Ghoda");
+
+/* 
+// default parameters
+function add(v1 = 0,v2 = 0){
+console.log(v1+v2);
 }
 
-dance("Gadha");             //arguments
-dance("Ghoda");
+add(); 
+
+*/
+
+/* 
+// rest / spread parameters
+
+function abcd(...val){
+    console.log(val);
+}
+
+abcd(1,2,3,4,5,6,7,8,9,10);
+ */
+
+
+
+
+/* 
+// first class functions
+
+function abcd (val){    // this val now can be called as a funciton inside abcd
+    val();
+}
+
+abcd(function (){       // cannot write the function name
+    console.log("HEHEHEHEHEHEHEHEHHE");
+});
+ */
+
+
+/* 
+//higher order functions
+
+function abcd(val){
+    return function(){
+        console.log("HEHEHEHEHEHEHEHEHEHE");
+    }
+}
+
+abcd()();
+
+*/
+
+
+// pure vs impure functions
+
+
 
 
 
