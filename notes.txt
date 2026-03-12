@@ -181,3 +181,80 @@ function abcd(val){
 
 abcd()();       //first bracket to run the abcd, second one to run the function which is returned form abcd
 
+
+pure vs impure Functions => ek aisa function jo ki bahar ki value ko naa badle vo hai pure function | aisa function jo bahar ki value badal de vo hai impure function
+
+//pure function 
+
+function a(){
+    console.log("Hello");
+}
+
+//impure function
+
+let a = 0;
+function b(){
+    a++;
+}
+
+// closures and lexical scoping 
+closures => ek function jo return kare ek aur function aur return hone wala function humesha use karega parent funciton ka koi variable
+
+function abcd(){
+    let a = 12;
+    return function (){
+        console.log(a);
+    }
+}
+
+lexical scoping => physical position ka scope kya hai
+
+IIFE (Immediately Invoked Funciton Expressions) => function no name, wrapped in parenthesis and called Immediately
+    -> isko call nahi karna padta
+(function(){
+
+})();
+
+
+// Hoisting differences between declaration and expression
+
+Hoisting works for normal functions, but wont work for function expressions
+/* 
+// works 
+
+abcd();
+
+
+
+
+
+
+function abcd(){
+    console.log("HUIHUIHUIHUI");
+}
+ */
+
+
+/* 
+// wont work, throws error 
+
+abcd();
+
+
+
+
+
+
+
+let abcd = function(){
+    console.log("HeHEHEHEHEHEHEHEHEHE");
+}
+
+ */
+
+
+
+
+
+
+      

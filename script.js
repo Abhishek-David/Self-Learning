@@ -69,8 +69,8 @@ abcd(function (){       // cannot write the function name
  */
 
 
-
-/* //higher order functions
+/* 
+//higher order functions
 
 function abcd(val){
     return function(){
@@ -78,14 +78,79 @@ function abcd(val){
     }
 }
 
-abcd()();
+abcd()(); */
 
+
+
+
+/* // pure vs impure functions
+
+//pure function 
+
+function a(){
+    console.log("Hello");
+}
+
+//impure function
+
+let a = 0;
+function b(){
+    a++;
+}
 
  */
 
-// pure vs impure functions
+
+// closures and lexcical scoping
+/* 
+function abcd(){
+    let a = 12;
+    return function (){
+        console.log(a);
+    }
+}
+ */
 
 
+// IIFE (Immediately Invoked Funciton Expressions)
+
+(function(){
+
+})();
+
+// Hoisting differences between declaration and expression
+/* 
+// works 
+
+abcd();
+
+
+
+
+
+
+function abcd(){
+    console.log("HUIHUIHUIHUI");
+}
+ */
+
+
+/* 
+// wont work, throws error 
+
+abcd();
+
+
+
+
+
+
+
+let abcd = function(){
+    console.log("HeHEHEHEHEHEHEHEHEHE");
+}
+
+ */
 
 
 
