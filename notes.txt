@@ -114,7 +114,7 @@ continue; => skip and keep going
 
 syntax ->
 
-function (){
+function name(){
 // your code;
 }
 
